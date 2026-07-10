@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background-color: #fff;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+::selection {
+  background-color: #000;
+  color: #fff;
+}
+
+div::selection,
+a::selection {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Underline animata dei link di navigazione:
+   entra da sinistra in hover, esce verso destra al leave. */
+.headerLink {
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+}
+
+.headerLink:after {
+  content: "";
+  height: 1px;
+  background: #000;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-out;
+}
+
+.headerLink:hover:after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.noScrollBar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.noScrollBar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Riquadri loghi con effetto "crocini di stampa":
+   bordo nero 1px coperto agli angoli da barrette bianche 3px inset 10px
+   (le barrette hanno il colore dello sfondo). */
+.div-with-borders {
+  position: relative;
+  z-index: 1;
+  border: 1px solid #000;
+}
+
+.div-with-borders:before,
+.div-with-borders:after {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+  left: 0;
+  right: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 3px;
+  background-color: #fff;
+}
+
+.div-with-borders:before {
+  top: -2px;
+}
+
+.div-with-borders:after {
+  bottom: -2px;
+}
+
+.div-with-borders > .border-left,
+.div-with-borders > .border-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 3px;
+  background-color: #fff;
+}
+
+.div-with-borders > .border-left {
+  left: -2px;
+}
+
+.div-with-borders > .border-right {
+  right: -2px;
+}
