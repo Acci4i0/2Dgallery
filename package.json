@@ -1,7 +1,14 @@
 {
-  "name": "meklit",
+  "name": "2dgallery",
   "version": "0.1.0",
   "private": true,
+  "description": "Portfolio fotografico con preloader, transizioni di pagina, overlay progetto e filmstrip orizzontale — rebuild study del sito di Meklit Fekadu",
+  "author": "Andrea (https://github.com/Acci4i0)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Acci4i0/2Dgallery.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
