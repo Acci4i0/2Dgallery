@@ -19,12 +19,18 @@ npm install
 npm run dev        # http://localhost:3000
 ```
 
-Build di produzione:
+Build di produzione (export statico in `out/`):
 
 ```bash
 npm run build
-npm start
+npx serve out   # anteprima locale della build
 ```
+
+## Deploy
+
+Ogni push su `main` esegue il workflow [deploy.yml](.github/workflows/deploy.yml)
+che esporta il sito statico (con `basePath /2Dgallery`) e lo pubblica su
+GitHub Pages: https://acci4i0.github.io/2Dgallery/
 
 ## Struttura
 

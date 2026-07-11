@@ -26,8 +26,12 @@ const names = [
   "IMG_0396",
 ];
 
-const thumb = (n) => `/images/thumbs/${n}.jpg`;
-const full = (n) => `/images/full/${n}.jpg`;
+// Prefisso per il deploy sotto sottocartella (es. GitHub Pages /2Dgallery);
+// con immagini "unoptimized" Next non applica il basePath da solo ai src.
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
+const thumb = (n) => `${BASE}/images/thumbs/${n}.jpg`;
+const full = (n) => `${BASE}/images/full/${n}.jpg`;
 
 // Griglia della home (thumbnail, stesso ordine del riferimento: un unico array)
 export const overviewImages = names.map(thumb);
