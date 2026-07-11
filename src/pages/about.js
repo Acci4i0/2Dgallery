@@ -113,8 +113,10 @@ export default function About() {
               className="flex flex-col pt-4 md:pt-0 w-12/12 justify-between"
             >
               <div className="flex flex-col">
+                {/* Il nome resta a peso 400: Monoton ha un solo peso e il
+                    grassetto sintetico ne rovinerebbe il tratteggio. */}
                 <div className="text-xl md:text-2xl font-bold mb-2 tracking-tighter">
-                  {site.title}
+                  <span className="font-monoton font-normal">{site.title}</span>
                 </div>
                 <div className="w-full md:w-10/12 font-light text-base">
                   Testo bio placeholder: presentati qui in poche righe. Racconta
@@ -170,7 +172,8 @@ export default function About() {
             <div className="overflow-hidden flex justify-start">
               <div className="invisible" ref={addFooterRightRef}>
                 <a href={site.creditsUrl} target="_blank" rel="noreferrer" className="">
-                  {site.credits}
+                  {site.creditsPrefix}
+                  <span className="font-monoton font-normal">{site.title}</span>
                 </a>
               </div>
             </div>

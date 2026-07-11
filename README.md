@@ -70,4 +70,4 @@ originale è incluso: fotografie e contenuti sono personali.
 
 ## Licenza
 
-[MIT](LICENSE) © Andrea ([Acci4i0](https://github.com/Acci4i0))
+[MIT](LICENSE) © ANDREA ([Acci4i0](https://github.com/Acci4i0))

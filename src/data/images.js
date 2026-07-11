@@ -89,6 +89,6 @@ export const site = {
   instagram: "https://instagram.com/andrelndo",
   extraLabel: "+39(0)3337216052",
   extraUrl: "tel:+393337216052",
-  credits: "WEBSITE BY: ANDREA",
+  creditsPrefix: "WEBSITE BY: ",
   creditsUrl: "https://github.com/Acci4i0",
 };

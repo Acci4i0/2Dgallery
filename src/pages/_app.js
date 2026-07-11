@@ -1,4 +1,6 @@
 import "../styles/globals.css";
+// Font della scritta del nome (stesso dell'intro di 3Dgallery, via Fontsource).
+import "@fontsource/monoton";
 import { useEffect } from "react";
 import Head from "next/head";
 import { AnimatePresence } from "framer-motion";

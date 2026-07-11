@@ -15,7 +15,7 @@ export default function Header({ active, addRef, fixed = false }) {
     >
       <div className="w-6/12 flex overflow-hidden">
         <div className="invisible" ref={addRef}>
-          <Link href="/" className="text-nowrap">{site.title}</Link>
+          <Link href="/" className="text-nowrap font-monoton font-normal">{site.title}</Link>
         </div>
       </div>
       <div className="w-6/12 flex justify-between overflow-hidden">
