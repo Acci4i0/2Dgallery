@@ -5,32 +5,10 @@ import { useGSAP } from "@gsap/react";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import Cursor from "../components/Cursor";
+import Preloader from "../components/Preloader";
 import ProjectDetails from "../components/ProjectDetails";
 import useRefCollector from "../hooks/useRefCollector";
 import { overviewImages, findProjectByThumb } from "../data/images";
-
-// Contatore preloader: step non lineari avanzati ogni 100ms (0 -> 100 in 1.6s)
-const COUNTER_STEPS = [0, 7, 15, 21, 30, 38, 45, 55, 63, 73, 74, 80, 86, 91, 98, 99, 100];
-
-function Counter() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setIndex((i) => {
-        const next = i + 1;
-        if (next >= COUNTER_STEPS.length) {
-          clearInterval(id);
-          return i;
-        }
-        return next;
-      });
-    }, 100);
-    return () => clearInterval(id);
-  }, []);
-
-  return <div>{COUNTER_STEPS[index]}</div>;
-}
 
 // Flag a livello di modulo: il preloader appare solo al primo mount
 // (full reload). Le navigazioni SPA successive non lo mostrano.
@@ -115,17 +93,7 @@ export default function Home() {
       <div className="flex flex-col noScrollBar">
         <Header active="overview" addRef={addHeaderRef} />
         <div className="mb-44">
-          {!hasPageLoaded && (
-            <div
-              ref={counterRef}
-              className="fixed top-0 pl-1 w-full flex uppercase text-7xl"
-            >
-              <div className="w-8/12">
-                <Counter />
-              </div>
-              <div className="w-4/12">100</div>
-            </div>
-          )}
+          {!hasPageLoaded && <Preloader ref={counterRef} />}
           <div className="flex flex-col gap-16 px-5 pt-8 md:pt-16 noScrollBar">
             <div className="w-full noScrollBar grid grid-cols-3 gap-x-4 gap-y-8 md:flex md:flex-wrap md:gap-x-12 md:gap-y-12 justify-between">
               {overviewImages.map((src, i) => (
